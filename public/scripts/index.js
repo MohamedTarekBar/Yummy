@@ -20,7 +20,7 @@ let win = $(window);
 let indicator = new Indicator()
 let main;
 
-document.body.appendChild(indicator.indicator)
+$('.sections-container').append(indicator.indicator)
 
 win.on("load", () => {
 	main = new Main();
@@ -89,8 +89,16 @@ class Main {
 		animateLeftSlider(this.navComponent.slider);
 		toggleClass(this.navComponent.list, "listUp");
 	}
+	closeSlider() {
+		if (this.navComponent.toggleIco.hasClass("fa-times")) {
+			toggleClass(this.navComponent.toggleIco, "fa-times");
+			animateLeftSlider(this.navComponent.slider);
+			toggleClass(this.navComponent.list, "listUp");
+		}
+	}
 	searchBtnTapped() {
 		this.searchComponent.searchContainer.removeClass("d-none");
+		this.searchComponent.searchContainer.css({display:"flex"})
 		this.formComponent.form.slideUp(100);
 		this.toggleBtnTapped();
 		this.dataSection.html("");
@@ -151,7 +159,10 @@ class Main {
 	staticCodes() {
 		this.searchComponent.searchContainer.slideUp(500);
 		this.formComponent.form.slideUp(500);
-		this.toggleBtnTapped();
+		this.searchComponent.searchByNameInput.val('')
+		this.searchComponent.searchByfirstLetter.val('')
+		//this.toggleBtnTapped();
+		this.closeSlider()
 		this.dataSection.html("");
 	}
 	displayIngredients(data) {
@@ -182,6 +193,7 @@ class Main {
 		this.dataSection.html("");
 		this.dataSection.append(createElement("div", ["row", "mt-3", "p-2"], "rowData", children));
 		$(".post").bind("click", (e) => {
+			this.closeSlider()
 			this.spinner.show(this.mainSection)
 			this.meal.filterByMainIngredient(e.currentTarget.getAttribute("Ingredients"),
 				(d) => {
@@ -217,6 +229,7 @@ class Main {
 		this.dataSection.html("");
 		this.dataSection.append(createElement("div", ["row", "mt-3", "p-2"], "rowData", children));
 		$(".post").bind("click", (e) => {
+			this.closeSlider()
 			this.spinner.show(this.mainSection)
 			this.meal.filterByAreas(e.currentTarget.getAttribute("area"), (d) => {
 				this.displaySearchSection(d);
@@ -264,13 +277,13 @@ class Main {
 			this.dataSection.append(createElement("div", ["row", "mt-3", "p-2"], "rowData", children));
 		}
 		$(".post").bind("click", (e) => {
+			this.closeSlider()
 			this.spinner.show(this.mainSection)
 			this.getDetails(e.currentTarget.getAttribute("meal"));
 		});
 		}
 	}
 	displayCategories(data) {
-		console.log(data);
 		let array = data.categories;
 		if (array != null) {
 			let children = [];
@@ -314,6 +327,7 @@ class Main {
 			this.dataSection.append(createElement("div", ["row", "mt-3", "p-2"], "rowData", children));
 		}
 		$(".post").bind("click", (e) => {
+			this.closeSlider()
 			this.spinner.show(this.mainSection)
 			this.meal.filterByCategory(e.currentTarget.getAttribute("meal"), (d) => {
 				this.displaySearchSection(d);
@@ -323,6 +337,8 @@ class Main {
 		}
 	}
 	getDetails(id) {
+		this.closeSlider()
+		this.searchComponent.searchContainer.slideUp()
 		this.spinner.show(this.mainSection)
 		this.meal.filterById(id, (details) => {
 			this.spinner.hide(this.mainSection)
