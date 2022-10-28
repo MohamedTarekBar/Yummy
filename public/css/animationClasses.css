@@ -1,0 +1,28 @@
+.listUp {
+  bottom: -100vh !important;
+}
+
+.open-nav .nav-items {
+  left: 0;
+}
+
+.open-nav .static-left-nav {
+  left: 250px;
+}
+
+.close-nav .nav-items {
+  left: -250px;
+}
+
+.close-nav .static-left-nav {
+  left: 0;
+}
+
+.scale-animate {
+  transform: scale(0);
+  transition: all 1s;
+}
+
+.scale-animate.animate {
+  transform: scale(1);
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE" ="edge" />
+    <meta
+      name="viewport"
+      content="width"
+      ="device-width,"
+      initial-scale="1.0"
+    />
+    <link rel="icon" href="../public/assets/logo.png" />
+    <title>Yummy</title>
+    <link rel=stylesheet href=../public/css/style.css>
+  </head>
+  <body>
+    <section class="slider close-nav">
+      <div class="static-left-nav">
+        <div class="logo">
+          <a href="./main.html">
+            <img src="../public/assets/logo.png" />
+          </a>
+        </div>
+        <div class="toggel-menu">
+          <i class="toggel-menu-ico fa fa-align-justify"></i>
+        </div>
+        <div class="social-icon">
+          <div class="strip-lang">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="strip-share"><i class="fas fa-share-alt"></i></div>
+        </div>
+      </div>
+      <div class="nav-items">
+        <div class="list-container">
+          <ul>
+            <li id="searchBtn" class="listUp"><a href="#">Search</a></li>
+            <li id="CategoriesBtn" class="listUp">
+              <a href="#">Categories</a>
+            </li>
+            <li id="AreaBtn" class="listUp"><a href="#">Area</a></li>
+            <li id="IngredientsBtn" class="listUp">
+              <a href="#">Ingredients</a>
+            </li>
+            <li id="ContactBtn" class="listUp"><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer d-flex gap-2 flex-column">
+          <div class="social-media d-flex gap-3 justify-content-center">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-dribbble"></i>
+          </div>
+          <div class="copy-rights">
+            Copyright Yummy 2022 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="sections-container">
+      <section class="container search-container d-none">
+        <div class="row w-100 my-5">
+          <div class="col-md-6">
+            <input
+              id="searchInput"
+              autocomplete="off"
+              class="form-control mb-2"
+              placeholder="Search By Name"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              class="form-control"
+              id="letter"
+              type="text"
+              autocomplete="off"
+              maxlength="1"
+              placeholder="search By First Letter..."
+            />
+          </div>
+        </div>
+      </section>
+      <section class="loading"></section>
+      <section class="form-container">
+        <form action="#" novalidate>
+          <div class="row p-5">
+            <div class="col-md-6">
+              <input
+              id="username"
+                type="text"
+                autocomplete="off"
+                class="form-control mb-2"
+                placeholder="Enter your name"
+              />
+              <div
+                class="alert mt-1 alert-danger d-none"
+                id="usernameAlert"
+                role="alert"
+              >
+                Special Characters and Numbers not allowed
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                />
+                <div
+                  class="alert mt-1 alert-danger d-none"
+                  id="emailAlert"
+                  role="alert"
+                >
+                  Enter valid email. *Ex: xxx@yyy.zzz
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="phone"
+                  placeholder="Enter phone"
+                />
+                <div
+                  class="alert mt-1 alert-danger d-none"
+                  id="phoneAlert"
+                  role="alert"
+                >
+                  Enter valid Phone Number
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" id="age" placeholder="Enter age" />
+                <div
+                  class="alert mt-1 alert-danger d-none"
+                  id="ageAlert"
+                  role="alert"
+                >
+                  Enter valid Age
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="password"
+                  id="password"
+                  placeholder="Enter password"
+                  autocomplete="off"
+                />
+                <div
+                  class="alert mt-1 alert-danger d-none"
+                  id="passwordAlert"
+                  role="alert"
+                >
+                  Enter valid password *Minimum eight characters, at least one
+                  letter and one number:*
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="password"
+                  id="rePassword"
+                  placeholder="Re enter password"
+                  autocomplete="off"
+                />
+                <div
+                  class="alert mt-1 alert-danger d-none"
+                  id="rePasswordAlert"
+                  role="alert"
+                >
+                  Enter valid Repassword
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center">
+              <button type="button" disabled="" id="submitBtn" class="btn btn-outline-danger p-2">Submit</button>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="data"></section>
+    </div>
+    <script src="../public/scripts/index.js" type="module"></script>
+  </body>
+</html>
