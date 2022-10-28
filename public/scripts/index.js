@@ -2,7 +2,7 @@ import "./Lib/bootstrap.bundle.min.js";
 import "./Lib/jquery-3.6.1.min.js";
 import {
 	constStrings
-} from "./Utilities/constants.js";
+} from "./utilities/constants.js";
 import RegEx from "./utilities/regex.js";
 import {
 	createElement,
