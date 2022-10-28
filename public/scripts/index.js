@@ -455,7 +455,7 @@ class Main {
 				}
 			}
 			for(const value of measuresArr.values()) {
-				if(value != "") {
+				if(value != "" && value != null) {
 					measArr.push(value);
 				}
 			}
